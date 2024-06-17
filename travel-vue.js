@@ -22,20 +22,18 @@ Vue.createApp({
     methods:{
         // 新增
         newT(){
-            if(this.travelCount!== 0){
-                let result=confirm("確定要新增一筆行程?");
-                if(result){
-                    this.travelCount++;
-                    localStorage.setItem('travelCount',this.travelCount);
-                    localStorage.setItem('travelName'+ this.travelCount ,this.travelName);
-                    localStorage.setItem('startDay'+ this.travelCount ,this.startDay);
-                    localStorage.setItem('content'+ this.travelCount ,this.content);
-                    alert("第"+this.travelCount+"筆行程  已新增成功!");
-                    this.travelName='';
-                    this.startDay='';
-                    this.content='';
-                }   
-            }
+            let result=confirm("確定要新增一筆行程?");
+            if(result){
+                this.travelCount++;
+                localStorage.setItem('travelCount',this.travelCount);
+                localStorage.setItem('travelName'+ this.travelCount ,this.travelName);
+                localStorage.setItem('startDay'+ this.travelCount ,this.startDay);
+                localStorage.setItem('content'+ this.travelCount ,this.content);
+                alert("第"+this.travelCount+"筆行程  已新增成功!");
+                this.travelName='';
+                this.startDay='';
+                this.content='';
+            }   
         },
         // 查看
         check(){
