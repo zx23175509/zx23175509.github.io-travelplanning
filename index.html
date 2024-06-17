@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>旅行計劃網</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="icon" href="travel.ico">
+    <link rel="stylesheet" href="travel.css">
+ </head>
+ <body>
+    <a id="use" href="旅行規劃說明.pdf" target="_blank">
+        <img src="travel-title.jpg" style="max-width: 100%; max-height: 100%;"><br><br>
+    </a>
+    <!-- vue框架主程式 -->
+    <div id="app">
+        <div class="button-box" style="position: relative; text-align: center;">
+            <button class="bt-list" @click="check">查看旅行列表</button>
+            <button class="bt-list" @click="edit">選取旅行編號</button>
+            <button class="bt-list" @click="edit1">編輯旅行詳情</button>
+            <button class="bt-list" @click="delT">刪除行程</button>
+            <button class="bt-list" @click="delAT">刪除所有行程</button>
+            <button class="bt-list" @click="info">行程數</button><br><br>
+            <a href="https://github.com/zx23175509/zx23175509.github.io-travelplanning"class="button-link">詳細說明</a>
+        </div>
+
+        <div id="input-box">
+            <label>旅行名稱:
+                <input type="text" v-model="travelName">
+            </label>
+            <label>日期:
+                <input type="date" v-model="startDay"><br>
+            </label>
+            <label>開始:
+                <select v-model="startTime" >
+                <optgroup label="上午"></optgroup>
+                    <option value="1">01:00</option>
+                    <option value="2">02:00</option>
+                    <option value="3">03:00</option>
+                    <option value="4">04:00</option>
+                    <option value="5">05:00</option>
+                    <option value="6">06:00</option>
+                    <option value="7">07:00</option>
+                    <option value="8">08:00</option>
+                    <option value="9">09:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                <optgroup label="下午"></optgroup>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                    <option value="24">00:00</option> 
+                </select>
+            </label>
+            <label>結束:
+                <select v-model="endTime">
+                <optgroup label="上午"></optgroup>
+                    <option value="1">01:00</option>
+                    <option value="2">02:00</option>
+                    <option value="3">03:00</option>
+                    <option value="4">04:00</option>
+                    <option value="5">05:00</option>
+                    <option value="6">06:00</option>
+                    <option value="7">07:00</option>
+                    <option value="8">08:00</option>
+                    <option value="9">09:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                <optgroup label="下午"></optgroup>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                    <option value="24">00:00</option> 
+                </select>
+                <button @click="setTime" class="timeStyle">設定時程表</button>
+                <button @click="setRange" class="timeStyle">插入時程範圍</button>
+            </label>
+            <label>規劃:<br>
+            <textarea v-model="content" rows="20"cols="100"></textarea>
+            </label>  
+        </div><br>
+
+        <div  style="position:relative; text-align: center;">
+            <button class="bt-list" @click="clear">清空欄位</button>
+            <button class="bt-list" @click="newT">新增旅遊行程</button>
+        </div>
+
+        <label>搜尋(編號/名稱):
+            <input type="text" style="width: unset;" v-model="search" @input="handleInput">
+        </label>
+       
+        <div id="list" ref="list">
+            <p v-html="msg"></p>
+        </div>
+        
+    </div>
+    
+    
+    <script src="travel-vue.js"></script>
+ </body>
+</html>
