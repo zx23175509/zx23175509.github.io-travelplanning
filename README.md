@@ -5,9 +5,9 @@
 
 ## 介面
 電腦端  
-![image]()
+<img src="https://github.com/zx23175509/zx23175509.github.io-travelplanning/blob/main/Example%20image/desktop.png" width="400">
 手機端  
-![image]()
+<img src="https://github.com/zx23175509/zx23175509.github.io-travelplanning/blob/main/Example%20image/desktop.png" width="400">
 
 ## 使用功能
 - **行程規劃**: 能夠規劃行程時間，類似於紀錄表的功能。
